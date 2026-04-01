@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSS Feed Reader</title>
+</head>
+<body>
+    <h1>RSS Feed Reader</h1>
+
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter RSS URL" size="50">
+        <button type="submit">Fetch</button>
+    </form>
+
+    <hr>
+
+    {% for article in articles %}
+        <h3>{{ article.title }}</h3>
+        <a href="{{ article.link }}" target="_blank">Read more</a>
+        <p>{{ article.summary }}</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
